@@ -31,11 +31,14 @@ Instructions
 
 1. Generate an SSH public key, if you don't already have one
 
-        ssh-keygen
+        ssh-keygen -f ~/.ssh/chrome_rsa
 
 1. Copy your SSH public key into place
 
-        cp ~/.ssh/id_rsa.pub .
+        cp ~/.ssh/chrome_rsa.pub .
+        ssh-add ~/.ssh/chrome_rsa
+
+1. Switch from wayland to X11, change in your machine the file /etc/gdm3/custom.conf or /etc/gdm3/daemon.conf uncomment the line 'WaylandEnable=false'. Restart the machine.
 
 1. Build the container
 
